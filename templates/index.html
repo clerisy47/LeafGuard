@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Potato Disease Classification</title>
+</head>
+<body>
+	<h1>Potato Disease Classification</h1>
+	<form method="post" action="{{ url_for('predict') }}" enctype="multipart/form-data">
+		<label for="image-upload"></label>
+		<input type="file" id="image-upload" name="image">
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+	<div id="result"></div>
+	<script>
+		var message = "{{ message }}";
+		if (message) {
+			document.getElementById("result").innerHTML = message;
+		}
+	</script>
+</body>
+</html>
