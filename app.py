@@ -24,7 +24,7 @@ def predict(image):
     return message.replace('_', ' ')
 
 
-st.title("Image Classification")
+st.title("Tomato Disease Classification")
 upload_file = st.sidebar.file_uploader("Upload tomato leaves images", type = ['jpg', 'png', 'jpeg'])
 generate_pred = st.sidebar.button("Predict")
 
