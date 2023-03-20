@@ -32,4 +32,4 @@ if generate_pred:
     image = Image.open(upload_file)
     with st.expander('image', expanded=True):
         st.image(image, use_column_width=True)
-    st.title(predict(image))
+    st.write(predict(image))
