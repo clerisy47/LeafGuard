@@ -1,20 +1,15 @@
 from tensorflow.keras.models import load_model
-from flask import Flask, request, render_template
 import numpy as np
 from PIL import Image
+import streamlit as st
 
-flask_app = Flask(__name__)
 
 class_names = ['Tomato_Early_blight', 'Tomato_Late_blight', 'Tomato_healthy']
 model = load_model('model')
 
-@flask_app.route("/")
-def Home():
-    return render_template("index.html")
 
-@flask_app.route("/predict", methods = ["POST"])
-def predict():
-    image = Image.open(request.files['image'])
+
+def predict(image):
     image = image.resize((256, 256))
     image = image.convert('RGB')
     img_array = np.array(image)
@@ -26,8 +21,15 @@ def predict():
     confidence = round(100 * (np.max(prediction)), 2)
     message = f"The tomato is predicted to be {predicted_class} with {confidence}% confidence"
 
-    return render_template("index.html", message=message)
+    return message.replace('_', ' ')
 
 
-if __name__ == "__main__":
-    flask_app.run(debug=True)
+st.title("Image Classification")
+upload_file = st.sidebar.file_uploader("Upload tomato leaves images", type = ['jpg', 'png', 'jpeg'])
+generate_pred = st.sidebar.button("Predict")
+
+if generate_pred:
+    image = Image.open(upload_file)
+    with st.expander('image', expanded=True):
+        st.image(image, use_column_width=True)
+    st.title(predict(image))
