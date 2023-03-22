@@ -50,10 +50,8 @@ Upload an image and the application will predict the face in the image using the
 # Credits
 * This project was created by Utsav Acharya.
 * The face recognition model was trained using Kaggle Dataset arjuntejaswi/plant-village.
-* The Scikit Learn, Keras and Tesnorflow were used for face and eye detection were trained by OpenCV.
-* The Streamlite web framework was used to create the web application.
-
- 
+* The Scikit Learn, Keras and Tesnorflow were used for image detection and model training.
+* The Streamlit web framework was used to create the web application.
 
 
 
