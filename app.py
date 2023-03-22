@@ -25,11 +25,11 @@ def predict(image):
 
 
 st.title("Tomato Disease Classification")
-upload_file = st.sidebar.file_uploader("Upload tomato leaves images", type = ['jpg', 'png', 'jpeg'])
-generate_pred = st.sidebar.button("Predict")
+upload_file = st.file_uploader("Upload tomato leaves images", type = ['jpg', 'png', 'jpeg'])
+generate_pred = st.button("Predict")
 
 if generate_pred:
     image = Image.open(upload_file)
     with st.expander('image', expanded=True):
         st.image(image, use_column_width=True)
-    st.write(predict(image))
+    st.markdown(f"<h2>{predict(image)}</h2>", unsafe_allow_html=True)
