@@ -1,5 +1,5 @@
 # Tomato-Disease-Classification
-This is a Streamlit web application for image recognition using a machine learning model that has been trained to recognize disease in Tomatoes. The model was trained using Scikit-learn, Keras and Tensorflow libraries.
+This is a Streamlit web application for Image Recognition using neural networks model that has been trained to recognize disease in Tomatoes. The model was trained using Scikit-learn, Keras and Tensorflow libraries.
 
 # Installation
 
@@ -36,7 +36,7 @@ To run the application, navigate to the root folder and execute the following co
 streamlit app.py
 ```
 Then, open a web browser and go to http://localhost:5000/.
-Upload an image and the application will predict the face in the image using the pre-trained machine learning model.
+Upload an image and the application will predict the disease of tomato in the image using the pre-trained deep learning model.
 
 # Files
 * app.py: This is the Streamio web application that serves as the main entry point of the program. It uses the machine learning model to predict the disease in an uploaded image.
@@ -45,7 +45,12 @@ Upload an image and the application will predict the face in the image using the
 
 * model.pkl: This is the pre-trained machine learning model.
 
+* dataset: This directory contain the data used for training the model.
+
 * test_images: This is the directory which contain test datasets for the classification.
+
+* requirements.txt: This is the text files which contains all the necessary dependencies with their versions.
+
 
 # Credits
 * This project was created by Utsav Acharya.
