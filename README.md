@@ -3,9 +3,11 @@ This is a Streamlit web application for image recognition using a machine learni
 
 # Installation
 
-Clone the repository and navigate to the root folder:  
+Clone the repository and navigate to the root folder:
+```terminal
 git clone https://github.com/yourusername/yourproject.git
 cd yourproject
+```
 
 Create a virtual environment: 
 ```terminal
