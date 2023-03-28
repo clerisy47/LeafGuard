@@ -51,6 +51,8 @@ Upload an image and the application will predict the disease of tomato in the im
 
 * requirements.txt: This is the text files which contains all the necessary dependencies with their versions.
 
+# License
+This project is protected by the MIT License. See the LICENSE file for more details.
 
 # Credits
 * This project was created by Utsav Acharya.
