@@ -14,7 +14,6 @@ def predict(image):
     image = image.convert('RGB')
     img_array = np.array(image)
     img_array = np.expand_dims(img_array, axis=0)
-    print(model.predict(img_array))
     prediction = model.predict(img_array)
 
     predicted_class = class_names[np.argmax(prediction)]
