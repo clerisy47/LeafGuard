@@ -1,5 +1,5 @@
-# Tomato-Disease-Classification
-This is a Streamlit web application for Image Recognition using Neural Networks that has been trained to recognize disease in Tomatoes. The model was trained using Scikit-learn, Keras and Tensorflow libraries.
+LeafGuard
+LeafGuard, a tomato disease classification app, is a Streamlit web application for Image Recognition using Neural Networks that has been trained to recognize disease in Tomatoes. The model was trained using Scikit-learn, Keras and Tensorflow libraries.
 
 # Installation
 
