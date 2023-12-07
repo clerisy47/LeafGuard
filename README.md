@@ -1,65 +1,65 @@
-LeafGuard
-LeafGuard, a tomato disease classification app, is a Streamlit web application for Image Recognition using Neural Networks that has been trained to recognize disease in Tomatoes. The model was trained using Scikit-learn, Keras and Tensorflow libraries.
+# Raspberry Pi Tomato Classification App
 
-# Installation
+## Overview
 
-Clone the repository and navigate to the root folder:
-```terminal
-git clone https://github.com/yourusername/yourproject.git
-cd yourproject
-```
+This Python application is designed to run on a Raspberry Pi and utilizes a pre-trained TensorFlow Keras model to classify tomato images into three categories: Early Blight, Late Blight, and Healthy. The model has been trained to make predictions based on input images provided to it.
 
-Create a virtual environment: 
-```terminal
-python3 -m venv venv
-```
+## Prerequisites
 
-Activate the virtual environment:  
-On Windows:  
-```terminal
-venv\Scripts\activate
-```
+- Raspberry Pi with camera module
+- Python 3.x installed
+- Required Python packages: tensorflow, numpy, Pillow (PIL), picamera
 
-On Linux or macOS:
-```terminal
-source venv/bin/activate
-```
+## Installation
 
-Install the dependencies: 
-```terminal
-pip install -r requirements.txt
-```
+1. Clone this repository to your Raspberry Pi:
 
-# Usage
-To run the application, navigate to the root folder and execute the following command:  
-```terminal
-streamlit app.py
-```
-Then, open a web browser and go to http://localhost:5000/.
-Upload an image and the application will predict the disease of tomato in the image using the pre-trained deep learning model.
+    ```bash
+    git clone https://github.com/your-username/your-repo.git
+    cd your-repo
+    ```
 
-# Files
-* app.py: This is the Streamio web application that serves as the main entry point of the program. It uses the machine learning model to predict the disease in an uploaded image.
+2. Install the required Python packages:
 
-* main.py: This is the Python script that trains the machine learning model using Scikit-learn, Keras and Tensorflow libraries.
+    ```bash
+    pip install tensorflow numpy Pillow picamera[array]
+    ```
 
-* model.pkl: This is the pre-trained machine learning model.
+3. Ensure that you have a pre-trained model file named `model` in the root directory of the project. You can replace it with your own trained model.
 
-* dataset: This directory contain the data used for training the model.
+## Usage
 
-* test_images: This is the directory which contain test datasets for the classification.
+1. Ensure your Raspberry Pi camera module is connected.
 
-* requirements.txt: This is the text files which contains all the necessary dependencies with their versions.
+2. Run the application:
 
-# License
-This project is protected by the MIT License. See the LICENSE file for more details.
+    ```bash
+    python your_app_name.py
+    ```
 
-# Credits
-* This project was created by Utsav Acharya.
-* The face recognition model was trained using Kaggle Dataset arjuntejaswi/plant-village.
-* The Scikit Learn, Keras and Tesnorflow were used for image detection and model training.
-* The Streamlit web framework was used to create the web application.
+3. The application will capture an image using the Raspberry Pi camera and classify the tomato in the image using the pre-trained model.
 
+4. The result, including the predicted class and confidence, will be printed to the console.
 
+## Configuration
 
+- The `class_names` variable contains the classes that the model can predict.
+- The `image_path` variable specifies the path to the captured image. Update it to match your project's file structure.
 
+## Notes
+
+- This application assumes that the Raspberry Pi camera module is properly connected and configured.
+- Ensure that the model file is present in the root directory and matches the expected file name ('model').
+- Modify the `class_names` list according to your model's output classes.
+- The `capture_image` function uses the `picamera` module to capture an image. Adjust the `time.sleep` duration based on your camera's initialization time.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute it as needed.
+
+## Acknowledgments
+
+- TensorFlow and Keras for providing powerful tools for machine learning on embedded devices.
+- The Raspberry Pi community for their continuous support and contributions to the field of DIY electronics.
+
+Please feel free to reach out for any questions or improvements!

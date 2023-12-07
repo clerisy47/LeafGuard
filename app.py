@@ -1,13 +1,9 @@
 from tensorflow.keras.models import load_model
 import numpy as np
 from PIL import Image
-import streamlit as st
-
 
 class_names = ['Tomato_Early_blight', 'Tomato_Late_blight', 'Tomato_healthy']
 model = load_model('model')
-
-
 
 def predict(image):
     image = image.resize((256, 256))
@@ -22,13 +18,14 @@ def predict(image):
 
     return message.replace('_', ' ')
 
+# Replace this path with the actual image path on your Raspberry Pi
+image_path = "raspberry_pi/images/image.jpeg"
 
-st.title("Tomato Disease Classification")
-upload_file = st.file_uploader("Upload tomato leaves images", type = ['jpg', 'png', 'jpeg'])
-generate_pred = st.button("Predict")
+try:
+    image = Image.open(image_path)
+except Exception as e:
+    print(f"Error opening the image: {e}")
+    exit()
 
-if generate_pred:
-    image = Image.open(upload_file)
-    with st.expander('image', expanded=True):
-        st.image(image, use_column_width=True)
-    st.markdown(f"<h2>{predict(image)}</h2>", unsafe_allow_html=True)
+prediction_message = predict(image)
+print(prediction_message)
