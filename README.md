@@ -1,4 +1,4 @@
-# Raspberry Pi Tomato Classification App
+# LeafGuard
 
 ## Overview
 
